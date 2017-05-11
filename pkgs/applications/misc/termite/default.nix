@@ -25,6 +25,9 @@ let
       mkdir -p $terminfo/share
       mv $out/share/terminfo $terminfo/share/terminfo
 
+      mkdir -p $out/etc/profile.d
+      ln -s ${vte}/etc/profile.d/vte.sh $out/etc/profile.d/vte.sh
+
       mkdir -p $out/nix-support
       echo "$terminfo" >> $out/nix-support/propagated-user-env-packages
     '';
